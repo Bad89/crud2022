@@ -14,7 +14,7 @@ export default function Home({ posts }) {
 
       <Nav />
 
-      <main>
+      {/* <main>
         <div className={styles.container}>
           {posts.length === 0 ? (
             <h2>No added posts</h2>
@@ -26,22 +26,22 @@ export default function Home({ posts }) {
             </ul>
           )}
         </div>
-      </main>
+      </main> */}
     </div>
   );
 }
 
-export async function getServerSideProps(ctx) {
-  let dev = process.env.NODE_ENV !== "production";
-  let { DEV_URL, PROD_URL } = process.env;
+// export async function getServerSideProps(ctx) {
+//   let dev = process.env.NODE_ENV !== "production";
+//   let { DEV_URL, PROD_URL } = process.env;
 
-  let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
+//   let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/posts`);
 
-  let data = await response.json();
+//   let data = await response.json();
 
-  return {
-    props: {
-      posts: data["message"],
-    },
-  };
-}
+//   return {
+//     props: {
+//       posts: data["message"],
+//     },
+//   };
+// }
